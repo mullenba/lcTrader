@@ -37,3 +37,4 @@ Icon
 
 authkeys.pkl
 *.pyc
+sessionAuth.pkl

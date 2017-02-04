@@ -91,7 +91,7 @@ def loadHistorical(sampleSize = 2500):
         try:
             phScore = scrape.getPaymentHistory(*row[:3])
         except:
-            print("\nPayment History Error Caught.  Continuing...")
+            print("\nPayment History Error Caught.\n", *row[:3], "\nContinuing...")
             print("Loading {} Results".format(len(newResults)))
             cur2.executemany(sql, newResults)
             con2.commit()
