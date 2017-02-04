@@ -1,6 +1,5 @@
 #/usr/bin/python3
 
-
 import sqlite3
 import re
 
@@ -14,7 +13,7 @@ from time import sleep
 import matplotlib.pyplot as plt
 import numpy, random
 
-import apiTest, scrape
+import apiTools, scrape
 
 con = sqlite3.connect('current.db')
 cur = con.cursor()
@@ -120,9 +119,8 @@ def processScores(inlist):
     return splitScores
 
 if __name__ == "__main__":
-    with open("lastrun.txt", "w") as f:
-        f.write("test")
-    apiTest.getCurrentNotes()
+
+    apiTools.getCurrentNotes()
     loadActive("currentNotes.csv")
 
     loadHistorical()
