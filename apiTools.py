@@ -7,6 +7,10 @@ import requests, pickle
 def getCurrentNotes():
     url = 'https://resources.lendingclub.com/SecondaryMarketAllNotes.csv'
 
+    with open("authkeys.pkl", "rb") as f:
+        headers = pickle.load(f)
+
+
     print("Sending request: ", url)
     r = requests.get(url, headers=headers, stream=True)
 
@@ -42,3 +46,4 @@ def saveHeaders(authKey):
 
 if __name__ == "__main__":
     #saveHeaders('XXXXXXXXXXXXXXX')
+    pass
