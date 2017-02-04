@@ -42,5 +42,3 @@ def saveHeaders(authKey):
 
 if __name__ == "__main__":
     #saveHeaders('XXXXXXXXXXXXXXX')
-
-    print(availableCash(101133232))
