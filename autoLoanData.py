@@ -95,6 +95,7 @@ def loadHistorical(sampleSize = 2500):
             print("Loading {} Results".format(len(newResults)))
             cur2.executemany(sql, newResults)
             con2.commit()
+
             phScore = None
             newResults = []
             
@@ -123,4 +124,4 @@ if __name__ == "__main__":
     apiTools.getCurrentNotes()
     loadActive("currentNotes.csv")
 
-    loadHistorical()
+    #loadHistorical()

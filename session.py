@@ -232,7 +232,7 @@ class Session:
         except Exception:
             return False
 
-    def request(self, method, path, query=None, data=None, redirects=True):
+    def request(self, method, path, query=None, data=None, redirects=True, timeout=15.0):
         """
         Sends HTTP request to LendingClub.
 
@@ -265,13 +265,13 @@ class Session:
             self.__log('{0} request to: {1}'.format(method, url))
 
             if method == 'POST':
-                request = self.__session.post(url, params=query, data=data, allow_redirects=redirects, timeout=5.0)
+                request = self.__session.post(url, params=query, data=data, allow_redirects=redirects, timeout=timeout)
             elif method == 'GET':
-                request = self.__session.get(url, params=query, data=data, allow_redirects=redirects)
+                request = self.__session.get(url, params=query, data=data, allow_redirects=redirects, timeout=timeout)
             elif method == 'HEAD':
-                request = self.__session.head(url, params=query, data=data, allow_redirects=redirects)
+                request = self.__session.head(url, params=query, data=data, allow_redirects=redirects, timeout=timeout)
             elif method == 'DELETE':
-                request = self.__session.delete(url, params=query, data=data, allow_redirects=redirects)
+                request = self.__session.delete(url, params=query, data=data, allow_redirects=redirects, timeout=timeout)
             else:
                 raise SessionError('{0} is not a supported HTTP method'.format(method))
 
